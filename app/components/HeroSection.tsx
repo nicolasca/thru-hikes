@@ -1,5 +1,5 @@
 // components/HeroSection.tsx
-import Image from "next/image"; // Don't forget to import Image
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -19,7 +19,7 @@ export function HeroSection() {
           Your GPS Just Died. Good.
         </h1>
         <p className="text-xl md:text-2xl font-light mb-8 drop-shadow-md animate-fade-in-up animation-delay-300">
-          Forget your comfort zone. Find out what you're really made of.{" "}
+          Forget your comfort zone. Find out what you&apos;re really made of.{" "}
           <br className="hidden sm:inline" /> Or just look at pretty pictures.
         </p>
         {/* You can add a button here later if you want to scroll to the trails */}

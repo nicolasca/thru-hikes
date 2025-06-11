@@ -1,7 +1,6 @@
 // components/TrailCard.tsx
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { OriginalTrailData } from "../types/trails";
 
 interface TrailCardProps {
@@ -212,15 +211,14 @@ export function TrailCard({ trail }: TrailCardProps) {
 
         {/* WHY? Section - NEW ADDITION */}
         <div className="mt-6 pt-4 border-t border-blue-200 dark:border-blue-700">
-          {" "}
           {/* Changed border color */}
           <h4 className="text-xs font-bold uppercase text-blue-600 dark:text-blue-400 tracking-wider mb-2">
             Why this trail?
-          </h4>{" "}
+          </h4>
           {/* Changed text color and made it bold */}
           <p className="text-sm italic text-blue-800 dark:text-blue-300">
-            "{trail.why}"
-          </p>{" "}
+            {trail.why}
+          </p>
           {/* Changed text color and made it italic */}
         </div>
       </div>
