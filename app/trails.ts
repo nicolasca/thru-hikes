@@ -1,5 +1,3 @@
-import { OriginalTrailData } from "./types/trails";
-
 export const trailsData = [
   {
     name: "Pacific Crest Trail",
