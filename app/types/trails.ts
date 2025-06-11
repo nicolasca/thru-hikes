@@ -22,6 +22,8 @@ export interface OriginalTrailData {
   why: string;
   socialScale: number; // 1 (Very Solitary) to 5 (Very Social)
   wildernessScale: number; // 1 (Civilized) to 5 (Wild)
+  highestPoint: string;
+  regionsTraversed: string[];
 }
 
 // Your actual trailsData will be placed in TrailList.tsx

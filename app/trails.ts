@@ -1,6 +1,6 @@
 import { OriginalTrailData } from "./types/trails";
 
-export const trailsData: OriginalTrailData[] = [
+export const trailsData = [
   {
     name: "Pacific Crest Trail",
     subtitle: "PCT",
@@ -16,14 +16,16 @@ export const trailsData: OriginalTrailData[] = [
     specificity: "Legendary West Coast Trail",
     idealWindow: "April/May",
     estimatedDuration: "4-6 months",
-    budget: "€1000-1500/month",
+    budget: "€920-€2,300/month", // Updated based on research
     social: "Very Social",
     terrain: "Mountainous, Desert, Forested",
-    dangers: ["Snow (Sierra)", "Fires", "River Crossorssings"],
+    dangers: ["Snow (Sierra)", "Fires", "River Crossings"],
     budgetLevel: 3,
     why: "Because it's a grand, scenic rollercoaster of extremes where you'll find both yourself and a whole new family.",
     socialScale: 5, // Very Social
     wildernessScale: 4, // Mostly Wild, some towns
+    highestPoint: "Forester Pass (4,009 m / 13,153 ft)",
+    regionsTraversed: ["California", "Oregon", "Washington"],
   },
   {
     name: "Appalachian Trail",
@@ -39,7 +41,7 @@ export const trailsData: OriginalTrailData[] = [
     specificity: "The oldest long-distance trail",
     idealWindow: "March/April",
     estimatedDuration: "5-7 months",
-    budget: "€800-1200/month",
+    budget: "€550-€1800/month", // Updated based on research
     social: "Very Social",
     terrain: "Muddy, Rooty, Rocky",
     dangers: ["Ticks", "Bears", "Storms"],
@@ -47,6 +49,23 @@ export const trailsData: OriginalTrailData[] = [
     why: "If you want to walk through an endless green tunnel of roots and rocks, forge unbreakable bonds, and learn how much rain a human can actually withstand.",
     socialScale: 5, // Very Social
     wildernessScale: 3, // Green tunnel, but never far from civilization
+    highestPoint: "Kuwohi (formerly Clingmans Dome) (2,025 m / 6,643 ft)",
+    regionsTraversed: [
+      "Georgia",
+      "North Carolina",
+      "Tennessee",
+      "Virginia",
+      "West Virginia",
+      "Maryland",
+      "Pennsylvania",
+      "New Jersey",
+      "New York",
+      "Connecticut",
+      "Massachusetts",
+      "Vermont",
+      "New Hampshire",
+      "Maine",
+    ],
   },
   {
     name: "Continental Divide Trail",
@@ -59,18 +78,26 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "5/5",
     adventureDifficulty: "5/5",
     sceneryRating: "5/5",
-    landscape: "Rockies • Wild • Isolated",
+    landscape: "Wild Rockies • High Plains • Deserts", // Updated based on research
     specificity: "The ultimate Rockies adventure",
     idealWindow: "June",
     estimatedDuration: "5-7 months",
-    budget: "€1200-1800/month",
+    budget: "€920-€1,380/month", // Updated based on research
     social: "Very Solitary",
-    terrain: "High Mountain, Off-trail",
-    dangers: ["Navigation", "Isolation", "Dangerous Wildlife"],
+    terrain: "High Mountain, Off-trail, Variable", // Updated based on research
+    dangers: [
+      "Navigation",
+      "Isolation",
+      "Dangerous Wildlife",
+      "River Crossings",
+      "Snow",
+    ], // Updated based on research
     budgetLevel: 4,
     why: "For an unmatched blend of breathtaking beauty and pure, unadulterated solitude where the biggest challenge is often just finding the trail.",
-    socialScale: 2, // Very Solitary
-    wildernessScale: 5, // Pure Wild
+    socialScale: 2, // Very Solitary - Confirmed
+    wildernessScale: 5, // Pure Wild - Confirmed
+    highestPoint: "Grays Peak (4,352 m / 14,278 ft)",
+    regionsTraversed: ["New Mexico", "Colorado", "Wyoming", "Idaho", "Montana"],
   },
   {
     name: "Te Araroa",
@@ -83,18 +110,37 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "4/5",
     adventureDifficulty: "4/5",
     sceneryRating: "5/5",
-    landscape: "Coasts • Volcanoes • Fjords",
+    landscape: "Coasts • Volcanoes • Fjords • Forests • Urban Sections", // Updated based on research
     specificity: "Spectacular New Zealand diversity",
     idealWindow: "Oct/Nov",
     estimatedDuration: "3-5 months",
-    budget: "€1000-1500/month",
+    budget: "€1,360-€1,700/month", // Updated based on research
     social: "Social",
-    terrain: "Coastal, Mountains, Volcanic",
-    dangers: ["River Crossings", "Unpredictable Weather"],
+    terrain: "Coastal, Mountains, Volcanic, River Crossings, Forests", // Updated based on research
+    dangers: [
+      "River Crossings",
+      "Unpredictable Weather",
+      "Navigation",
+      "Sandflies",
+    ], // Updated based on research
     budgetLevel: 3,
     why: "Where else can you hike active volcanoes, paddle rivers, and then walk pristine beaches, all while battling epic weather in one unforgettable journey?",
-    socialScale: 4, // Social
-    wildernessScale: 4, // Diverse, often wild
+    socialScale: 4, // Social - Confirmed
+    wildernessScale: 4, // Diverse, often wild - Confirmed
+    highestPoint: "Stag Saddle (1,925 m / 6,315 ft)",
+    regionsTraversed: [
+      "Northland",
+      "Auckland",
+      "Waikato",
+      "Bay of Plenty",
+      "Manawatu-Wanganui",
+      "Wellington",
+      "Nelson",
+      "Marlborough",
+      "Canterbury",
+      "Otago",
+      "Southland",
+    ],
   },
   {
     name: "Hexatrek",
@@ -111,14 +157,22 @@ export const trailsData: OriginalTrailData[] = [
     specificity: "Tour de France of mountain ranges",
     idealWindow: "June/July",
     estimatedDuration: "3-4 months",
-    budget: "€800-1200/month",
+    budget: "€800-€1,200/month", // Confirmed from previous research
     social: "Moderately Social",
     terrain: "Mountainous, Forested",
-    dangers: ["Storms (Montagne)", "Chaleur (Sud)"],
+    dangers: ["Storms (Montagne)", "Heat (Sud)", "Snow (early/late season)"], // Added based on context
     budgetLevel: 2,
     why: "To conquer France's majestic mountain ranges and discover hidden regional gems, proving there's more to France than just Paris and baguettes.",
     socialScale: 3, // Moderately Social
     wildernessScale: 3, // Mix of mountain and villages
+    highestPoint: "Mont Thabor (3,178 m / 10,427 ft)",
+    regionsTraversed: [
+      "Grand Est (Vosges)",
+      "Bourgogne-Franche-Comté (Jura)",
+      "Auvergne-Rhône-Alpes (Northern Alps: Vanoise, Beaufortain; Southern Alps: Écrins, Vercors, Belledonne)",
+      "Occitanie (Cévennes, Tarn)",
+      "Nouvelle-Aquitaine / Occitanie (Pyrenees)",
+    ],
   },
   {
     name: "Ruta de los Parques",
@@ -131,18 +185,26 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "4/5",
     adventureDifficulty: "5/5",
     sceneryRating: "5/5",
-    landscape: "Patagonia • Glaciers • Fjords",
+    landscape: "Patagonia • Glaciers • Fjords • Forests • Steppe", // Updated based on research
     specificity: "Wild and authentic Patagonia",
     idealWindow: "Nov/Dec",
     estimatedDuration: "2-4 months",
-    budget: "€1000-1800/month",
+    budget:
+      "€1,000-€1,800/month (potentially higher due to remoteness and specific logistics)", // Adjusted to reflect potential higher costs
     social: "Very Solitary",
-    terrain: "Glacial, Fjords, Mountainous",
-    dangers: ["Extreme Weather", "Isolation", "Water Crossings"],
+    terrain: "Glacial, Fjords, Mountainous, River Crossings, Remote", // Updated based on research
+    dangers: ["Extreme Weather", "Isolation", "Water Crossings", "Navigation"], // Confirmed
     budgetLevel: 4,
     why: "If you dream of untouched wilderness, massive glaciers, and truly earning your Patagonian vistas, this is where you disappear (happily).",
-    socialScale: 1, // Very Solitary
-    wildernessScale: 5, // Very Wild
+    socialScale: 1, // Very Solitary - Confirmed
+    wildernessScale: 5, // Very Wild - Confirmed
+    highestPoint:
+      "Mount San Valentín (3,910 m / 12,828 ft) - *highest peak in Patagonia, though not directly on the main hiking route, it's a significant point of interest accessible via the route.*",
+    regionsTraversed: [
+      "Los Lagos Region",
+      "Aysén Region (e.g., Cerro Castillo NP, Patagonia NP)",
+      "Magallanes Region (e.g., Torres del Paine NP, Kawésqar NP, Bernardo O'Higgins NP)",
+    ],
   },
   {
     name: "Great Divide Trail",
@@ -159,19 +221,23 @@ export const trailsData: OriginalTrailData[] = [
     specificity: "Challenging wilderness route along the Continental Divide",
     idealWindow: "July/August",
     estimatedDuration: "6-8 weeks",
-    budget: "€800-1500/month",
+    budget: "€920-€1,840/month", // Updated based on research
     social: "Very Solitary",
-    terrain: "Rugged Mountain, Forest, River Crossings",
+    terrain: "Rugged Mountain, Forest, River Crossings, Off-trail sections", // Added based on research
     dangers: [
       "Grizzly Bears",
       "River Crossings",
       "Snow (early/late season)",
       "Remote Sections",
+      "Navigation Challenges",
     ],
     budgetLevel: 3,
     why: "Because true wilderness means navigating unmarked trails, dodging grizzly bears, and crossing rivers that might make your heart skip a beat.",
-    socialScale: 1, // Very Solitary
-    wildernessScale: 5, // Very Wild
+    socialScale: 1, // Very Solitary - Confirmed
+    wildernessScale: 5, // Very Wild - Confirmed
+    highestPoint:
+      "Unnamed Pass (often referred to as Michelle Lakes Pass) (2,578 m / 8,458 ft)",
+    regionsTraversed: ["Alberta", "British Columbia"],
   },
   {
     name: "Arizona Trail",
@@ -189,14 +255,17 @@ export const trailsData: OriginalTrailData[] = [
       "Traverses Arizona from Mexico to Utah, including Grand Canyon",
     idealWindow: "March/April (NOBO) or Oct/Nov (SOBO)",
     estimatedDuration: "6-8 weeks",
-    budget: "€800-1200/month",
+    budget: "€736-€1,104/month", // Updated based on research
     social: "Social",
-    terrain: "Desert, Mountainous, Canyons",
+    terrain: "Desert, Mountainous, Canyons, Varied", // Confirmed
     dangers: ["Heat", "Water Scarcity", "Rattlesnakes", "Flash Floods"],
     budgetLevel: 2,
     why: "To discover that Arizona is far more than just desert – it's a surprisingly diverse odyssey that culminates in *that* Canyon view.",
-    socialScale: 4, // Social
-    wildernessScale: 3, // Mix of wilderness and access points
+    socialScale: 4, // Social - Confirmed
+    wildernessScale: 3, // Mix of wilderness and access points - Confirmed
+    highestPoint:
+      "Kaibab Plateau (approx. 2,900 m / 9,600 ft) or San Francisco Peaks (on a proposed section)",
+    regionsTraversed: ["Arizona"],
   },
   {
     name: "Hayduke Trail",
@@ -209,19 +278,29 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "5/5",
     adventureDifficulty: "5/5",
     sceneryRating: "5/5",
-    landscape: "Desert Canyons • Red Rock • Wilderness",
+    landscape: "Desert Canyons • Red Rock • Wilderness • Geological Formations", // Updated based on research
     specificity:
       "Unmarked, challenging route through Southern Utah and Northern Arizona's canyons",
     idealWindow: "April/May or Sept/Oct",
     estimatedDuration: "8-10 weeks",
-    budget: "€1000-1500/month",
+    budget:
+      "€920-€1,380/month (Highly variable due to remoteness and specialized gear)", // Adjusted to reflect more general remote trail budget
     social: "Very Solitary",
-    terrain: "Canyon Country, Off-trail, Scrambling",
-    dangers: ["Navigation", "Water Caches", "Exposure", "Extreme Heat/Cold"],
+    terrain: "Canyon Country, Off-trail, Scrambling, Remote", // Confirmed
+    dangers: [
+      "Navigation",
+      "Water Caches",
+      "Exposure",
+      "Extreme Heat/Cold",
+      "Flash Floods",
+      "Technical sections",
+    ], // Confirmed and expanded
     budgetLevel: 3,
     why: "You're looking for a route that actively tries to lose you, demanding every ounce of your skill to navigate an otherworldly red rock labyrinth.",
-    socialScale: 1, // Very Solitary
-    wildernessScale: 5, // Extremely Wild
+    socialScale: 1, // Very Solitary - Confirmed
+    wildernessScale: 5, // Extremely Wild - Confirmed
+    highestPoint: "Mount Ellen in the Henry Mountains (3,481 m / 11,419 ft)",
+    regionsTraversed: ["Utah", "Arizona"],
   },
   {
     name: "Via Alpina",
@@ -234,19 +313,38 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "4/5",
     adventureDifficulty: "3/5",
     sceneryRating: "5/5",
-    landscape: "Alpine Peaks • Valleys • Villages • Glaciers (High Routes)",
+    landscape:
+      "Alpine Peaks • Valleys • Villages • Glaciers (High Routes) • Diverse Alpine Culture", // Updated based on research
     specificity:
       "Network of 5 long-distance trails across the entire Alpine arc",
     idealWindow: "June-September",
     estimatedDuration: "4-6 months (for a full route)",
-    budget: "€1500-2500/month",
+    budget: "€1,300-€2,500/month", // Updated based on research
     social: "Moderately Social (can be solitary on less popular sections)",
-    terrain: "Mountainous, Well-marked (mostly), Some steep sections",
-    dangers: ["Thunderstorms", "Snowfields (early season)", "Altitude"],
+    terrain:
+      "Mountainous, Well-marked (mostly), Some steep sections, Varied terrain", // Confirmed
+    dangers: [
+      "Thunderstorms",
+      "Snowfields (early season)",
+      "Altitude",
+      "Rockfall",
+    ], // Confirmed
     budgetLevel: 4,
     why: "Walk across an entire continent's mountainous spine, experiencing a dizzying blend of languages, cultures, and eye-watering Alpine grandeur.",
-    socialScale: 3, // Moderately Social (can vary greatly by section)
-    wildernessScale: 3, // Mix of true wilderness and developed areas/huts
+    socialScale: 3, // Moderately Social (can vary greatly by section) - Confirmed
+    wildernessScale: 3, // Mix of true wilderness and developed areas/huts - Confirmed
+    highestPoint:
+      "Niederjoch pass (3,019 m / 9,905 ft) or Hohtürli (2,778 m / 9,114 ft)", // Providing both as context varies
+    regionsTraversed: [
+      "Slovenia",
+      "Italy (Friuli-Venezia Giulia, Veneto, Trentino-Alto Adige, Lombardy, Piedmont, Liguria)",
+      "Austria",
+      "Germany (Bavaria)",
+      "Liechtenstein",
+      "Switzerland",
+      "France",
+      "Monaco",
+    ],
   },
   {
     name: "Sentiero Italia",
@@ -259,18 +357,48 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "4/5",
     adventureDifficulty: "3/5",
     sceneryRating: "4/5",
-    landscape: "Mountains • Hills • Coastlines • Historical Towns",
+    landscape:
+      "Mountains • Hills • Coastlines • Historical Towns • Diverse Cultural Landscapes", // Updated based on research
     specificity: "Covers Italy's entire mountainous spine and islands",
     idealWindow: "May-June or Sept-Oct",
     estimatedDuration: "8-12 months (or section by section)",
-    budget: "€800-1500/month",
+    budget: "€1,050-€1,800/month", // Updated based on research
     social: "Moderately Social",
-    terrain: "Varied, Mountainous, Forested, Coastal",
-    dangers: ["Heat (South)", "Isolation (some sections)", "Logistics"],
+    terrain: "Varied, Mountainous, Forested, Coastal, Historical Paths", // Confirmed
+    dangers: [
+      "Heat (South)",
+      "Isolation (some sections)",
+      "Logistics (resupply/water)",
+      "Thunderstorms",
+    ], // Confirmed and expanded
     budgetLevel: 3,
     why: "Because it's a walking feast for the senses, taking you through Italy's wild heart, historic villages, and straight to the best pasta you'll ever earn.",
-    socialScale: 3, // Moderately Social, touches many towns
-    wildernessScale: 2, // Less wild, more cultural/historical
+    socialScale: 3, // Moderately Social, touches many towns - Confirmed
+    wildernessScale: 2, // Less wild, more cultural/historical - Confirmed
+    highestPoint:
+      "Punta La Marmora (Sardinia) (1,834 m / 6,017 ft) or generally around 3,098m in the Alps (on specific high sections)", // Providing both as context varies
+    regionsTraversed: [
+      "Sardinia",
+      "Sicily",
+      "Calabria",
+      "Basilicata",
+      "Puglia",
+      "Campania",
+      "Molise",
+      "Abruzzo",
+      "Lazio",
+      "Umbria",
+      "Marche",
+      "Tuscany",
+      "Emilia-Romagna",
+      "Liguria",
+      "Piedmont",
+      "Valle d'Aosta",
+      "Lombardy",
+      "Trentino-Alto Adige",
+      "Veneto",
+      "Friuli-Venezia Giulia",
+    ],
   },
   {
     name: "Michinoku Coastal Trail",
@@ -282,21 +410,30 @@ export const trailsData: OriginalTrailData[] = [
     physicalDifficulty: "3/5",
     adventureDifficulty: "2/5",
     sceneryRating: "4/5",
-    landscape: "Coastal Cliffs • Beaches • Fishing Villages • Forests",
+    landscape:
+      "Coastal Cliffs • Beaches • Fishing Villages • Forests • Wetlands", // Updated based on research
     specificity: "Reconstruction and scenic trail along Japan's Tohoku coast",
     idealWindow: "April-June or Sept-Nov",
     estimatedDuration: "6-8 weeks",
-    budget: "€1000-1800/month",
+    budget: "€1,800-€2,400/month", // Updated based on research
     social: "Social (local interaction, many guesthouses)",
-    terrain: "Coastal paths, Forest trails, Urban sections",
+    terrain: "Coastal paths, Forest trails, Urban sections, Some elevation", // Confirmed
     dangers: [
       "Bears (some areas)",
       "Tsunamis (awareness needed)",
-      "Logistics (language)",
+      "Logistics (language/planning)",
+      "Steep ascents/descents",
     ],
     budgetLevel: 3,
     why: "For a uniquely Japanese blend of stunning coastal beauty, profound resilience, and the joy of discovering hidden culinary delights in small fishing towns.",
-    socialScale: 3, // Social, as it goes through many towns
-    wildernessScale: 2, // Primarily coastal, less deep wilderness
+    socialScale: 3, // Social, as it goes through many towns - Confirmed
+    wildernessScale: 2, // Primarily coastal, less deep wilderness - Confirmed
+    highestPoint: "Mount Hashikamidake (740 m / 2,428 ft)",
+    regionsTraversed: [
+      "Aomori Prefecture",
+      "Iwate Prefecture",
+      "Miyagi Prefecture",
+      "Fukushima Prefecture",
+    ],
   },
 ];

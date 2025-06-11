@@ -26,15 +26,24 @@ function getStarRating(ratingString: string) {
   return <div className="flex items-center justify-center">{stars}</div>;
 }
 
-// NEW helper to get budget text color
 function getBudgetColor(budgetLevel: number): string {
-  if (budgetLevel <= 2) {
-    return "text-teal-600 dark:text-teal-400"; // Low budget
+  // Budget Level 1: Lowest (e.g., AT) - Green
+  if (budgetLevel <= 1) {
+    // Explicitly target 1
+    return "text-teal-600 dark:text-teal-400"; // Low budget (Green)
   }
+  // Budget Level 2: Moderate (e.g., Hexatrek, AZT) - Orange
+  if (budgetLevel === 2) {
+    // Explicitly target 2
+    return "text-amber-600 dark:text-amber-500"; // Medium budget (Orange)
+  }
+  // Budget Level 3: Higher (e.g., PCT, TA, GDT, Hayduke, SI, MCT) - Reddish-Orange/Darker Orange
   if (budgetLevel === 3) {
-    return "text-amber-600 dark:text-amber-500"; // Medium budget
+    // Explicitly target 3
+    return "text-orange-600 dark:text-orange-500"; // Higher budget (Orange-Red)
   }
-  return "text-red-600 dark:text-red-500"; // High budget
+  // Budget Level 4: Very High / Premium (e.g., CDT, Ruta, Via Alpina) - Red
+  return "text-red-600 dark:text-red-500"; // High budget (Red) - default for anything 4 or above
 }
 // --- End Helper Functions ---
 
@@ -163,11 +172,33 @@ export function TrailCard({ trail }: TrailCardProps) {
           </div>
 
           <div className="flex items-center justify-between">
+            <span className="text-slate-600 dark:text-slate-400">
+              Highest Point
+            </span>
+            <span className="font-semibold text-slate-800 dark:text-slate-200">
+              {trail.highestPoint}
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between">
             <span className="text-slate-600 dark:text-slate-400">Budget</span>
             <span
               className={`font-semibold ${getBudgetColor(trail.budgetLevel)}`}
             >
               {trail.budget}
+            </span>
+          </div>
+
+          {/* NEW: Regions Traversed */}
+          <div className="flex flex-col">
+            {" "}
+            {/* Use flex-col for label above value */}
+            <span className="text-slate-600 dark:text-slate-400 mb-1">
+              Regions Traversed
+            </span>
+            <span className="font-semibold text-slate-800 dark:text-slate-200 text-right text-xs">
+              {trail.regionsTraversed.join(" • ")}{" "}
+              {/* Join with a dot separator */}
             </span>
           </div>
         </div>
