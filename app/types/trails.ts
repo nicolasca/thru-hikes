@@ -24,6 +24,7 @@ export interface OriginalTrailData {
   wildernessScale: number; // 1 (Civilized) to 5 (Wild)
   highestPoint: string;
   regionsTraversed: string[];
+  gpxUrl?: string;
 }
 
 // Your actual trailsData will be placed in TrailList.tsx

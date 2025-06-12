@@ -98,15 +98,10 @@ export function TrailCard({ trail, onLearnMore }: TrailCardProps) {
               <Image
                 src={trail.flag}
                 alt={`Flag of ${trail.country}`}
-                width={28}
+                width={40}
                 height={20}
                 className="rounded-md shadow-lg border border-white/20"
               />
-              <div className="bg-black/40 backdrop-blur-md rounded-full px-2 py-1">
-                <span className="text-white text-xs font-medium">
-                  {trail.country}
-                </span>
-              </div>
             </motion.div>
 
             <motion.div

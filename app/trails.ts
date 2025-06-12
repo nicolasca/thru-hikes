@@ -24,6 +24,7 @@ export const trailsData = [
     wildernessScale: 4, // Mostly Wild, some towns
     highestPoint: "Forester Pass (4,009 m / 13,153 ft)",
     regionsTraversed: ["California", "Oregon", "Washington"],
+    gpxUrl: "/gpx/pacific-crest-trail.gpx",
   },
   {
     name: "Appalachian Trail",
@@ -64,6 +65,7 @@ export const trailsData = [
       "New Hampshire",
       "Maine",
     ],
+    gpxUrl: "/gpx/appalachian-trail.gpx",
   },
   {
     name: "Continental Divide Trail",
@@ -96,6 +98,7 @@ export const trailsData = [
     wildernessScale: 5, // Pure Wild - Confirmed
     highestPoint: "Grays Peak (4,352 m / 14,278 ft)",
     regionsTraversed: ["New Mexico", "Colorado", "Wyoming", "Idaho", "Montana"],
+    gpxUrl: "/gpx/continental-divide-trail.gpx",
   },
   {
     name: "Te Araroa",
@@ -171,6 +174,7 @@ export const trailsData = [
       "Occitanie (Cévennes, Tarn)",
       "Nouvelle-Aquitaine / Occitanie (Pyrenees)",
     ],
+    gpxUrl: "/gpx/hexatrek.gpx",
   },
   {
     name: "Ruta de los Parques",
@@ -236,6 +240,7 @@ export const trailsData = [
     highestPoint:
       "Unnamed Pass (often referred to as Michelle Lakes Pass) (2,578 m / 8,458 ft)",
     regionsTraversed: ["Alberta", "British Columbia"],
+    gpxUrl: "/gpx/great-divide-trail.gpx",
   },
   {
     name: "Arizona Trail",
@@ -264,6 +269,7 @@ export const trailsData = [
     highestPoint:
       "Kaibab Plateau (approx. 2,900 m / 9,600 ft) or San Francisco Peaks (on a proposed section)",
     regionsTraversed: ["Arizona"],
+    gpxUrl: "/gpx/arizona-trail.gpx",
   },
   {
     name: "Hayduke Trail",
@@ -281,8 +287,7 @@ export const trailsData = [
       "Unmarked, challenging route through Southern Utah and Northern Arizona's canyons",
     idealWindow: "April/May or Sept/Oct",
     estimatedDuration: "8-10 weeks",
-    budget:
-      "€920-€1,380/month (Highly variable due to remoteness and specialized gear)", // Adjusted to reflect more general remote trail budget
+    budget: "€920-€1,380/month", // Adjusted to reflect more general remote trail budget
     social: "Very Solitary",
     terrain: "Canyon Country, Off-trail, Scrambling, Remote", // Confirmed
     dangers: [
@@ -299,6 +304,7 @@ export const trailsData = [
     wildernessScale: 5, // Extremely Wild - Confirmed
     highestPoint: "Mount Ellen in the Henry Mountains (3,481 m / 11,419 ft)",
     regionsTraversed: ["Utah", "Arizona"],
+    gpxUrl: "/gpx/hayduke-trail.gpx",
   },
   {
     name: "Via Alpina",
@@ -343,6 +349,7 @@ export const trailsData = [
       "France",
       "Monaco",
     ],
+    gpxUrl: "/gpx/via-alpina.gpx", // Assuming a GPX file is available
   },
   {
     name: "Sentiero Italia",

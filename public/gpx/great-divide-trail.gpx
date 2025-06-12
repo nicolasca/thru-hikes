@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://www.topografix.com/GPX/1/1' xsi:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd' xmlns:gpxtpx='http://www.garmin.com/xmlschemas/TrackPointExtension/v1' xmlns:gpxx='http://www.garmin.com/xmlschemas/GpxExtensions/v3' xmlns:gpx_style='http://www.topografix.com/GPX/gpx_style/0/2' creator='https://expemag.com/mytrip' version='1.1'>
+  <metadata>
+    <name>Great Divide Trail - Canada - traversée des Rocheuses à pied en 2 mois</name>
+    <desc>Traversée des Rocheuses canadiennes pendant 2 mois le long du Great Divide Trail, à deux, l'été 2019. Pour ceux qui aiment marcher dans de vastes étendues sauvages</desc>
+    <author>Sopalain</author>
+    <link>https://www.expemag.com/carnet/great-divide-trail-canada-traversee-des-rocheuses-a-pied-en-2-mois</link>
+  </metadata>
+  <trk>
+    <name>Great Divide Trail</name>
+    <src>ntt</src>
+    <type>2</type>
+    <trkseg>
+      <trkpt lat='48.80203949436396' lon='-113.66317749023438'>
+        <ele>1560.0</ele>
+      </trkpt>
+      <trkpt lat='49.04927010944929' lon='-113.91311645507812'>
+        <ele>1282.0</ele>
+      </trkpt>
+      <trkpt lat='49.31199261314568' lon='-114.44732666015625'>
+        <ele>2062.0</ele>
+      </trkpt>
+      <trkpt lat='49.60477714739884' lon='-114.66705322265625'>
+        <ele>1822.0</ele>
+      </trkpt>
+      <trkpt lat='50.14991970217968' lon='-114.67254638671874'>
+        <ele>2063.0</ele>
+      </trkpt>
+      <trkpt lat='50.52856079945554' lon='-114.90875244140624'>
+        <ele>2214.0</ele>
+      </trkpt>
+      <trkpt lat='50.987251566759426' lon='-115.40863037109374'>
+        <ele>2265.0</ele>
+      </trkpt>
+      <trkpt lat='51.396920824059755' lon='-116.25457763671875'>
+        <ele>1844.0</ele>
+      </trkpt>
+      <trkpt lat='52.094132574406565' lon='-117.07855224609376'>
+        <ele>2538.0</ele>
+      </trkpt>
+      <trkpt lat='52.567447107112145' lon='-117.93548583984374'>
+        <ele>2261.0</ele>
+      </trkpt>
+      <trkpt lat='53.16763117134215' lon='-118.81988525390624'>
+        <ele>2334.0</ele>
+      </trkpt>
+      <trkpt lat='53.105018183275035' lon='-119.18243408203124'>
+        <ele>2299.0</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>trace2</name>
+    <src>ntt</src>
+    <type>2</type>
+    <trkseg>
+      <trkpt lat='53.08082737207479' lon='-119.091796875'>
+        <ele>2735.0</ele>
+      </trkpt>
+      <trkpt lat='53.11051421895213' lon='-118.8775634765625'>
+        <ele>1485.0</ele>
+      </trkpt>
+      <trkpt lat='53.05442186546102' lon='-118.740234375'>
+        <ele>2239.0</ele>
+      </trkpt>
+      <trkpt lat='52.93539665862318' lon='-118.487548828125'>
+        <ele>2085.0</ele>
+      </trkpt>
+      <trkpt lat='52.80608223985886' lon='-118.333740234375'>
+        <ele>2310.0</ele>
+      </trkpt>
+      <trkpt lat='52.415822612378776' lon='-117.674560546875'>
+        <ele>1434.0</ele>
+      </trkpt>
+      <trkpt lat='52.18403686498285' lon='-117.18017578125'>
+        <ele>2592.0</ele>
+      </trkpt>
+      <trkpt lat='51.86631606154489' lon='-116.8341064453125'>
+        <ele>2211.0</ele>
+      </trkpt>
+      <trkpt lat='51.37178037591737' lon='-116.23535156249999'>
+        <ele>2404.0</ele>
+      </trkpt>
+      <trkpt lat='51.13455469147683' lon='-115.73547363281249'>
+        <ele>2223.0</ele>
+      </trkpt>
+      <trkpt lat='50.774681682270334' lon='-115.18615722656249'>
+        <ele>2276.0</ele>
+      </trkpt>
+      <trkpt lat='50.8510411296595' lon='-115.23559570312499'>
+        <ele>2252.0</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -176,7 +176,7 @@ export function TrailDetailView({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed inset-4 md:inset-8 lg:inset-12 z-50 overflow-auto"
+            className="fixed inset-4 md:inset-8 lg:inset-12 z-500 overflow-auto"
           >
             <Card className="max-w-6xl mx-auto bg-white dark:bg-slate-900 shadow-2xl border-0 rounded-3xl overflow-hidden">
               <CardContent className="p-0">
