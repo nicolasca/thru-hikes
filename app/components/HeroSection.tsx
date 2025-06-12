@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 export default function ImmersiveHeroSection() {
@@ -23,13 +24,15 @@ export default function ImmersiveHeroSection() {
         }}
       >
         {/* Replace src with your actual wilderness image */}
-        <img
+        <Image
           src="/images/hero-bg.jpg"
           alt="Vast wilderness landscape"
-          className={`w-full h-full object-cover transition-all duration-1000 ${
+          fill
+          className={`object-cover transition-all duration-1000 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
           onLoad={() => setImageLoaded(true)}
+          priority
         />
 
         {/* Subtle gradient overlay for text readability */}
