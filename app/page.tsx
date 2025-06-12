@@ -1,6 +1,7 @@
 // app/page.tsx
+"use client";
 
-import { HeroSection } from "./components/HeroSection";
+import HeroSection from "./components/HeroSection";
 import { TrailList } from "./components/TrailList";
 
 export default function HomePage() {

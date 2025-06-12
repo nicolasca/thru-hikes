@@ -1,13 +1,16 @@
 // components/TrailCard.tsx
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { OriginalTrailData } from "../types/trails";
+import { motion } from "framer-motion";
 
 interface TrailCardProps {
   trail: OriginalTrailData;
+  onLearnMore: (trail: OriginalTrailData) => void;
 }
 
-// --- Helper Functions (Simplified) ---
+// Helper function for star rating
 function getStarRating(ratingString: string) {
   const ratingValue = parseInt(ratingString.split("/")[0]);
   const stars = [];
@@ -15,7 +18,7 @@ function getStarRating(ratingString: string) {
     stars.push(
       <span
         key={i}
-        className={`star text-xl ${
+        className={`star text-lg ${
           i < ratingValue ? "text-amber-400" : "text-slate-300"
         }`}
       >
@@ -27,232 +30,112 @@ function getStarRating(ratingString: string) {
 }
 
 function getBudgetColor(budgetLevel: number): string {
-  // Budget Level 1: Lowest (e.g., AT) - Green
   if (budgetLevel <= 1) {
-    // Explicitly target 1
-    return "text-teal-600 dark:text-teal-400"; // Low budget (Green)
+    return "text-teal-600 dark:text-teal-400";
   }
-  // Budget Level 2: Moderate (e.g., Hexatrek, AZT) - Orange
   if (budgetLevel === 2) {
-    // Explicitly target 2
-    return "text-amber-600 dark:text-amber-500"; // Medium budget (Orange)
+    return "text-amber-600 dark:text-amber-500";
   }
-  // Budget Level 3: Higher (e.g., PCT, TA, GDT, Hayduke, SI, MCT) - Reddish-Orange/Darker Orange
   if (budgetLevel === 3) {
-    // Explicitly target 3
-    return "text-orange-600 dark:text-orange-500"; // Higher budget (Orange-Red)
+    return "text-orange-600 dark:text-orange-500";
   }
-  // Budget Level 4: Very High / Premium (e.g., CDT, Ruta, Via Alpina) - Red
-  return "text-red-600 dark:text-red-500"; // High budget (Red) - default for anything 4 or above
-}
-// --- End Helper Functions ---
-
-// NEW HELPER COMPONENT: ScaleBar for Mood/Atmosphere
-interface ScaleBarProps {
-  label: string;
-  value: number; // 1-5 scale
-  lowLabel: string;
-  highLabel: string;
-  colorClass: string; // Tailwind class for the indicator dot
+  return "text-red-600 dark:text-red-500";
 }
 
-const ScaleBar: React.FC<ScaleBarProps> = ({
-  label,
-  value,
-  lowLabel,
-  highLabel,
-  colorClass,
-}) => {
-  // Calculate percentage for dot position (0% for 1, 100% for 5)
-  const percentage = ((value - 1) / 4) * 100;
-
+export function TrailCard({ trail, onLearnMore }: TrailCardProps) {
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 tracking-wider mb-2">
-        {label}
-      </div>
-      <div className="relative w-full max-w-[180px] h-2 bg-slate-200 dark:bg-slate-700 rounded-full">
-        {/* Indicator dot */}
-        <div
-          className={`absolute h-4 w-4 ${colorClass} rounded-full -translate-y-1/2 top-1/2 shadow-md`}
-          style={{ left: `${percentage}%`, transform: `translateX(-50%)` }} // translateX(-50%) centers the dot
-        ></div>
-      </div>
-      {/* Labels below the bar */}
-      <div className="flex justify-between w-full max-w-[180px] text-xs mt-1 text-slate-500 dark:text-slate-400">
-        <span>{lowLabel}</span>
-        <span>{highLabel}</span>
-      </div>
-    </div>
-  );
-};
-
-export function TrailCard({ trail }: TrailCardProps) {
-  return (
-    <Card className="trail-card flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl dark:border-slate-700">
-      {/* CARD IMAGE SECTION */}
-      <div className="h-64 relative overflow-hidden">
-        <Image
-          src={trail.image}
-          alt={trail.name}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-        {/* Duration Circle */}
-        <div className="absolute top-4 right-4 bg-black/30 text-white backdrop-blur-md rounded-full px-3 py-1 text-xs font-semibold">
-          {trail.estimatedDuration}
-        </div>
-
-        {/* Country Flag */}
-        <div className="absolute top-4 left-4">
+    <motion.div
+      whileHover={{ y: -8, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="h-full"
+    >
+      <Card className="trail-card flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl dark:border-slate-700 h-full">
+        {/* CARD IMAGE SECTION */}
+        <div className="h-48 relative overflow-hidden">
           <Image
-            src={trail.flag}
-            alt={`Flag of ${trail.country}`}
-            width={48}
-            height={32}
-            className="w-12 h-auto rounded-md shadow-lg"
+            src={trail.image}
+            alt={trail.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-        {/* Trail Name and Subtitle */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <h2 className="text-2xl font-bold text-white mb-0 drop-shadow-md">
-            {trail.name}
-          </h2>
-          <p className="text-md text-white/90 font-light">{trail.subtitle}</p>
-        </div>
-      </div>
-
-      {/* INFO SECTION */}
-      <div className="p-6 flex-grow flex flex-col">
-        <p className="text-slate-600 dark:text-slate-400 mb-6 text-center text-sm">
-          {trail.landscape}
-        </p>
-
-        {/* Difficulty Ratings Grid */}
-        <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-          <div>
-            <div className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 tracking-wider mb-2">
-              Physical
-            </div>
-            {getStarRating(trail.physicalDifficulty)}
+          {/* Duration Circle */}
+          <div className="absolute top-3 right-3 bg-black/30 text-white backdrop-blur-md rounded-full px-2 py-1 text-xs font-semibold">
+            {trail.estimatedDuration}
           </div>
-          <div>
-            <div className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 tracking-wider mb-2">
-              Adventure
-            </div>
-            {getStarRating(trail.adventureDifficulty)}
+
+          {/* Country Flag */}
+          <div className="absolute top-3 left-3">
+            <Image
+              src={trail.flag}
+              alt={`Flag of ${trail.country}`}
+              width={36}
+              height={24}
+              className="w-9 h-auto rounded-sm shadow-lg"
+            />
           </div>
-          <div>
-            <div className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 tracking-wider mb-2">
-              Scenery
-            </div>
-            {getStarRating(trail.sceneryRating)}
+
+          {/* Trail Name and Subtitle */}
+          <div className="absolute bottom-3 left-3 right-3">
+            <h2 className="text-xl font-bold text-white mb-0 drop-shadow-md">
+              {trail.name}
+            </h2>
+            <p className="text-sm text-white/90 font-light">{trail.subtitle}</p>
           </div>
         </div>
 
-        {/* Detailed Info Rows */}
-        <div className="space-y-4 text-sm flex-grow">
-          <div className="flex items-center justify-between">
-            <span className="text-slate-600 dark:text-slate-400">Distance</span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">
-              {trail.distance}
-            </span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-slate-600 dark:text-slate-400">
-              Ideal Window
-            </span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">
-              {trail.idealWindow}
-            </span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-slate-600 dark:text-slate-400">
-              Highest Point
-            </span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">
-              {trail.highestPoint}
-            </span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-slate-600 dark:text-slate-400">Budget</span>
-            <span
-              className={`font-semibold ${getBudgetColor(trail.budgetLevel)}`}
-            >
-              {trail.budget}
-            </span>
-          </div>
-
-          {/* NEW: Regions Traversed */}
-          <div className="flex flex-col">
-            {" "}
-            {/* Use flex-col for label above value */}
-            <span className="text-slate-600 dark:text-slate-400 mb-1">
-              Regions Traversed
-            </span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200 text-right text-xs">
-              {trail.regionsTraversed.join(" • ")}{" "}
-              {/* Join with a dot separator */}
-            </span>
-          </div>
-        </div>
-
-        {/* Mood/Atmosphere Bars - NEW SECTION */}
-        <div className="flex flex-col gap-6 mb-6">
-          {" "}
-          {/* Spacing between bars */}
-          <ScaleBar
-            label="Social Vibe"
-            value={trail.socialScale}
-            lowLabel="Solitary"
-            highLabel="Social"
-            colorClass="bg-purple-500 dark:bg-purple-400"
-          />
-          <ScaleBar
-            label="Wilderness Level"
-            value={trail.wildernessScale}
-            lowLabel="Civilized"
-            highLabel="Wild"
-            colorClass="bg-green-500 dark:bg-green-400"
-          />
-        </div>
-
-        {/* Main Challenges / Dangers */}
-        <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
-          <h4 className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 tracking-wider mb-3">
-            Main Challenges
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {trail.dangers.map((danger, index) => (
-              <span
-                key={index}
-                className="px-2 py-1 bg-amber-100 text-amber-800 rounded-md text-xs font-medium dark:bg-amber-900/50 dark:text-amber-300"
-              >
-                {danger}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* WHY? Section - NEW ADDITION */}
-        <div className="mt-6 pt-4 border-t border-blue-200 dark:border-blue-700">
-          {/* Changed border color */}
-          <h4 className="text-xs font-bold uppercase text-blue-600 dark:text-blue-400 tracking-wider mb-2">
-            Why this trail?
-          </h4>
-          {/* Changed text color and made it bold */}
-          <p className="text-sm italic text-blue-800 dark:text-blue-300">
-            {trail.why}
+        {/* SIMPLIFIED INFO SECTION */}
+        <div className="p-4 flex-grow flex flex-col">
+          <p className="text-slate-600 dark:text-slate-400 mb-4 text-center text-sm">
+            {trail.landscape}
           </p>
-          {/* Changed text color and made it italic */}
+
+          {/* Essential Info Only */}
+          <div className="space-y-3 text-sm flex-grow">
+            <div className="flex items-center justify-between">
+              <span className="text-slate-600 dark:text-slate-400">
+                Distance
+              </span>
+              <span className="font-semibold text-slate-800 dark:text-slate-200">
+                {trail.distance}
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span className="text-slate-600 dark:text-slate-400">
+                Difficulty
+              </span>
+              <div className="flex items-center gap-1">
+                {getStarRating(trail.physicalDifficulty)}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span className="text-slate-600 dark:text-slate-400">Budget</span>
+              <span
+                className={`font-semibold text-sm ${getBudgetColor(
+                  trail.budgetLevel
+                )}`}
+              >
+                {trail.budget}
+              </span>
+            </div>
+          </div>
+
+          {/* Learn More Button */}
+          <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+            <Button
+              onClick={() => onLearnMore(trail)}
+              className="w-full"
+              variant="outline"
+            >
+              Learn More
+            </Button>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </motion.div>
   );
 }
